@@ -10,7 +10,7 @@ When you make changes:
 
 `git add . `
 
-`git commit -m "My commit mesage" `
+`git commit -m "My commit message" `
 
 `git push`
 
