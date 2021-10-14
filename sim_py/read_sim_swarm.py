@@ -57,7 +57,7 @@ def generate_sequence(seq):
 
 #right, left, forward, back
 seq = [
-    'forward',
+  'forward',
     'right',
     'forward',
     'left',
@@ -282,8 +282,42 @@ if __name__ == '__main__':
     # Plot
     from mpl_toolkits.mplot3d import Axes3D
     import matplotlib.pyplot as plt
+    import numpy as np
+
     fig = plt.figure()
     ax = fig.gca(projection='3d')
+
+    # Data for a three-dimensional line
+    zline1 = np.linspace(0, 1, 10)
+    a = [0.25] * 10
+    xline1 = a
+    yline1 = a
+    ax.plot3D(xline1, yline1, zline1, 'black', linewidth=12)
+
+    zline2 = np.linspace(0, 1, 10)
+    a2 = [1.25] * 10
+    xline2 = a2
+    yline2 = a
+    ax.plot3D(xline2, yline2, zline2, 'black', linewidth=12)
+
+    zline3 = np.linspace(0, 1, 10)
+    a3 = [0.75] * 10
+    xline3 = a
+    yline3 = a3
+    ax.plot3D(xline3, yline3, zline3, 'black', linewidth=12)
+
+    zline4 = np.linspace(0, 1, 10)
+    xline4 = a2
+    yline4 = a3
+    ax.plot3D(xline4, yline4, zline4, 'black', linewidth=12)
+
+    a5 = [1.2] * 10
+    zline5 = a5
+    xline5 = np.linspace(-0.5, 1.5, 10)
+    yline5 = a2
+    ax.plot3D(xline5, yline5, zline5, 'black', linewidth=12)
+
+
     for uri in uris:
         ax.plot(logdata[uri]['x'], logdata[uri]['y'], logdata[uri]['z'])
     plt.show()
