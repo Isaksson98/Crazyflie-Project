@@ -8,6 +8,7 @@ Works best with lighthouse/loco positioning systems.
 """
 import math
 import time
+from planning import rrt_particle as rrt
 
 # Primarily see __init__.py in cfsim/crazyflie/ to add functionality to simulator
 import cfsim.crtp as crtp
@@ -49,6 +50,7 @@ def generate_sequence(seq):
 
 
 #right, left, forward, back
+
 seq = [
     'forward',
     'right',
@@ -60,7 +62,8 @@ seq = [
     'forward',
 ]
 
-sequence = generate_sequence(seq)
+#sequence = generate_sequence(seq)
+sequence = rrt.get_path()
 
 #sequence = [
 #    (0, 0, 0.7),
@@ -145,7 +148,7 @@ def run_sequence(scf, logger, sequence):
 
         # Determine position reference based on time
         relativeTime = time.time()-startTime
-        if relativeTime > (sequencePos+1)*5: # Fly to each point for 5 seconds
+        if relativeTime > (sequencePos+1)*1: # Fly to each point for 5 seconds
             sequencePos += 1
 
             if sequencePos >= len(sequence):

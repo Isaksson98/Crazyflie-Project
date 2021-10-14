@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 #
 
-# hejhej
-
 """
 Simple example that connects to two crazyflies and sets the initial position.
 First crazyflie flies towards specified positions in sequence using onboard velocity control.
